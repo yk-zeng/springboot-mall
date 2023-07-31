@@ -19,10 +19,19 @@ public class ProductServiceImpl implements ProductService {
     public Integer insertProduct(ProductRequest productRequest) {
         return productDao.insertProduct(productRequest);
     }
+    @Override
+    public Product getProductById(Integer productId) {
+        return productDao.getProductById(productId);
+    }
 
     @Override
     public void updateProduct(Integer productId, ProductRequest productRequest) {
         productDao.updateProduct(productId, productRequest);
+    }
+
+    @Override
+    public void deleteProduct(Integer productId) {
+        productDao.deleteProduct(productId);
     }
 
     //    @Override
@@ -30,8 +39,5 @@ public class ProductServiceImpl implements ProductService {
 //
 //    }
 
-    @Override
-    public Product getProductById(Integer productId) {
-        return productDao.getProductById(productId);
-    }
+
 }

@@ -8,11 +8,11 @@ import java.util.List;
 public interface ProductDao {
 
     Integer insertProduct(ProductRequest productRequest);
-//    void insertList(List<ProductRequest> productRequestList);
-//    void delete(Integer productId);
-    void updateProduct(Integer productId, ProductRequest productRequest);
     Product getProductById(Integer productId);
-
+//    void insertList(List<ProductRequest> productRequestList);
+//
+    void updateProduct(Integer productId, ProductRequest productRequest);
+    void deleteProduct(Integer productId);
 
 
 }
