@@ -8,6 +8,7 @@ import java.util.List;
 public interface ProductDao {
 
     Integer insertProduct(ProductRequest productRequest);
+    List<Product> getProducts();
     Product getProductById(Integer productId);
 //    void insertList(List<ProductRequest> productRequestList);
 //
