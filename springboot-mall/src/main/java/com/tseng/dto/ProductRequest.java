@@ -1,19 +1,31 @@
-package com.tseng.model;
+package com.tseng.dto;
+
+import jakarta.validation.constraints.NotNull;
 
 
-import java.util.Date;
+public class ProductRequest {
 
-public class Product {
-
+    @NotNull
     private Integer productId;
-    private String productName;
-    private String category;
-    private String imageUrl;
-    private Integer price;
-    private Integer stock;
-    private String description;
-    private Date createdDate;
-    private Date lastModifiedDate;
+
+    @NotNull
+   private String productName;
+
+    @NotNull
+   private String category;
+
+    @NotNull
+   private String imageUrl;
+
+    @NotNull
+   private Integer price;
+
+    @NotNull
+   private Integer stock;
+
+
+   private String description;
+
 
     public Integer getProductId() {
         return productId;
@@ -69,21 +81,5 @@ public class Product {
 
     public void setDescription(String description) {
         this.description = description;
-    }
-
-    public Date getCreatedDate() {
-        return createdDate;
-    }
-
-    public void setCreatedDate(Date createdDate) {
-        this.createdDate = createdDate;
-    }
-
-    public Date getLastModifiedDate() {
-        return lastModifiedDate;
-    }
-
-    public void setLastModifiedDate(Date lastModifiedDate) {
-        this.lastModifiedDate = lastModifiedDate;
     }
 }
