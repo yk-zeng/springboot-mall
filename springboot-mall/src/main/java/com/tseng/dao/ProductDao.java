@@ -10,7 +10,7 @@ public interface ProductDao {
     Integer insertProduct(ProductRequest productRequest);
 //    void insertList(List<ProductRequest> productRequestList);
 //    void delete(Integer productId);
-//    void update(Product product);
+    void updateProduct(Integer productId, ProductRequest productRequest);
     Product getProductById(Integer productId);
 
 
