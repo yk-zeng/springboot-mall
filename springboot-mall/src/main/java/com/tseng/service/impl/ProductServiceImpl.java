@@ -1,5 +1,6 @@
 package com.tseng.service.impl;
 
+import com.tseng.constant.ProductCategory;
 import com.tseng.dao.ProductDao;
 import com.tseng.dto.ProductRequest;
 import com.tseng.model.Product;
@@ -21,8 +22,8 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
-    public List<Product> getProducts() {
-        return productDao.getProducts();
+    public List<Product> getProducts(ProductCategory category, String search) {
+        return productDao.getProducts(category, search);
     }
 
     @Override

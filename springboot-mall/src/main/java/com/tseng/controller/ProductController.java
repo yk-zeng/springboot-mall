@@ -1,5 +1,6 @@
 package com.tseng.controller;
 
+import com.tseng.constant.ProductCategory;
 import com.tseng.dto.ProductRequest;
 import com.tseng.model.Product;
 import com.tseng.service.ProductService;
@@ -33,9 +34,11 @@ public class ProductController {
     }
 
     @GetMapping("/products")
-    public ResponseEntity<List<Product>> getProducts() {
-
-        List<Product> productList = productService.getProducts();
+    public ResponseEntity<List<Product>> getProducts(
+            @RequestParam(required = false) ProductCategory category,
+            @RequestParam(required = false) String search
+    ) {
+        List<Product> productList = productService.getProducts(category, search);
 
         return ResponseEntity.status(HttpStatus.OK).body(productList);
     }
