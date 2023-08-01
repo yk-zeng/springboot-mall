@@ -1,6 +1,7 @@
 package com.tseng.controller;
 
 import com.tseng.constant.ProductCategory;
+import com.tseng.dto.ProductQueryParams;
 import com.tseng.dto.ProductRequest;
 import com.tseng.model.Product;
 import com.tseng.service.ProductService;
@@ -38,7 +39,12 @@ public class ProductController {
             @RequestParam(required = false) ProductCategory category,
             @RequestParam(required = false) String search
     ) {
-        List<Product> productList = productService.getProducts(category, search);
+
+        ProductQueryParams productQueryParams = new ProductQueryParams();
+        productQueryParams.setCategory(category);
+        productQueryParams.setSearch(search);
+
+        List<Product> productList = productService.getProducts(productQueryParams);
 
         return ResponseEntity.status(HttpStatus.OK).body(productList);
     }

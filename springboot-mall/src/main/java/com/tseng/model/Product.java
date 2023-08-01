@@ -1,8 +1,5 @@
 package com.tseng.model;
-
-
 import com.tseng.constant.ProductCategory;
-
 import java.util.Date;
 
 public class Product {
