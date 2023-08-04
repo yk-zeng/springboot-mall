@@ -1,5 +1,6 @@
 package com.tseng.dto;
 
+import com.tseng.constant.ProductCategory;
 import jakarta.validation.constraints.NotNull;
 
 
@@ -82,4 +83,5 @@ public class ProductRequest {
     public void setDescription(String description) {
         this.description = description;
     }
+
 }
