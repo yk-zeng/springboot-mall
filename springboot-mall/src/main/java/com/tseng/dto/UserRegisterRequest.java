@@ -1,10 +1,12 @@
 package com.tseng.dto;
 
+import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 
 public class UserRegisterRequest {
 
+    @Email
     @NotBlank
     private String email;
 
@@ -13,6 +15,7 @@ public class UserRegisterRequest {
 
     @NotNull
     private Integer userId;
+
 
     public String getEmail() {
         return email;
