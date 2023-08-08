@@ -1,6 +1,7 @@
 package com.tseng.service.impl;
 
 import com.tseng.dao.UserDao;
+import com.tseng.dto.UserLoginRequest;
 import com.tseng.dto.UserRegisterRequest;
 import com.tseng.model.User;
 import com.tseng.service.UserService;
@@ -18,6 +19,25 @@ public class UserServiceImpl implements UserService {
 
     @Autowired
     private UserDao userDao;
+
+    @Override
+    public User login(UserLoginRequest userLoginRequest) {
+
+        User user = userDao.getUserByEmail(userLoginRequest.getEmail());
+
+        if(user == null){
+            log.warn("該 email {} 尚未註冊", userLoginRequest.getEmail());
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST);
+        }
+
+        if(user.getPassword().equals(userLoginRequest.getPassword())){
+            return user;
+        } else {
+            log.warn("email {} 密碼不正確", userLoginRequest.getEmail());
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST);
+        }
+
+    }
 
     @Override
     public Integer register(UserRegisterRequest userRegisterRequest) {

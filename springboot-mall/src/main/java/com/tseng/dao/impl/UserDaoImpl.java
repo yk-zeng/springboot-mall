@@ -2,6 +2,7 @@ package com.tseng.dao.impl;
 
 import com.tseng.Mapper.UserRowMapper;
 import com.tseng.dao.UserDao;
+import com.tseng.dto.UserLoginRequest;
 import com.tseng.dto.UserRegisterRequest;
 import com.tseng.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,7 +20,6 @@ public class UserDaoImpl implements UserDao {
 
     @Autowired
     private NamedParameterJdbcTemplate namedParameterJdbcTemplate;
-
 
     @Override
     public User getUserById(Integer userId) {
