@@ -30,7 +30,7 @@ public class UserServiceImpl implements UserService {
 
         // 檢查user是否存在
         if(user == null){
-            log.warn("該 email {} 尚未註冊", userLoginRequest.getEmail());
+            log.warn("該 email {} 尚未被註冊", userLoginRequest.getEmail());
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST);
         }
 

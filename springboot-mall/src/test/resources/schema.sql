@@ -10,3 +10,15 @@ CREATE TABLE IF NOT EXISTS product(
     last_modified_date TIMESTAMP NOT NULL,
     PRIMARY KEY(product_id)
 )
+
+CREATE TABLE IF NOT EXISTS useraccount(
+
+    user_id            INTEGER      NOT NULL,
+    email              VARCHAR(256) NOT NULL,
+    password           VARCHAR(256) NOT NULL,
+    created_date       TIMESTAMP    NOT NULL,
+    last_modified_date TIMESTAMP    NOT NULL,
+    PRIMARY KEY(user_id),
+    UNIQUE(email)
+);
+
